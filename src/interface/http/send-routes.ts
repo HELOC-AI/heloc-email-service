@@ -1,9 +1,9 @@
-import { HEADERS, sendEmailRequestSchema, type SendEmailResponse } from '@heloc/contracts';
-import { HttpError, parseInput } from '@heloc/server-kit';
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
 import { ProviderError, type SendEmail } from '../../application/send-email.ts';
 import { InvalidEmailError } from '../../domain/outbound-email.ts';
+import { HttpError, parseInput } from '../../platform/errors.ts';
+import { HEADERS, sendEmailRequestSchema, type SendEmailResponse } from './contract.ts';
 
 const idempotencyKey = z.string().min(1).max(256).optional();
 

@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
-import type { Logger } from '@heloc/logger';
 import type { EmailProvider, SendOptions } from '../application/send-email.ts';
 import type { DeliveryReceipt, OutboundEmail } from '../domain/outbound-email.ts';
+import type { Logger } from '../platform/logger.ts';
 
 /** Local development: logs instead of sending. Honours idempotency like a real provider. */
 export class ConsoleProvider implements EmailProvider {

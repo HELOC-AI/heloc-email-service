@@ -1,10 +1,11 @@
-import type { EmailConfig } from '@heloc/config';
-import type { Logger } from '@heloc/logger';
-import { bearerAuth, createServer, type ErrorReporter } from '@heloc/server-kit';
 import { createSendEmail, type EmailProvider } from './application/send-email.ts';
 import { ConsoleProvider } from './infrastructure/console-provider.ts';
 import { ResendProvider } from './infrastructure/resend-provider.ts';
 import { sendRoutes } from './interface/http/send-routes.ts';
+import type { EmailConfig } from './config.ts';
+import type { ErrorReporter } from './platform/error-reporting.ts';
+import type { Logger } from './platform/logger.ts';
+import { bearerAuth, createServer } from './platform/server.ts';
 
 export const SERVICE = 'email';
 

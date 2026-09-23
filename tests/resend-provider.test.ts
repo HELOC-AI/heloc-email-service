@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { ProviderError } from '../application/send-email.ts';
-import { ResendProvider } from './resend-provider.ts';
+import { ProviderError } from '../src/application/send-email.ts';
+import { ResendProvider } from '../src/infrastructure/resend-provider.ts';
 
 const email = { to: 'john@example.com', subject: 'Hello', text: 'Hi', html: '<p>Hi</p>' };
 

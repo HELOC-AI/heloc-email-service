@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { InvalidEmailError, outboundEmail } from './outbound-email.ts';
+import { InvalidEmailError, outboundEmail } from '../src/domain/outbound-email.ts';
 
 const valid = { to: 'john@example.com', subject: 'Hello', text: 'Hi', html: '<p>Hi</p>' };
 

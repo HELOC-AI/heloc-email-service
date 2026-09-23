@@ -1,7 +1,9 @@
-import { emailEnv, loadConfigOrExit, serviceVersion } from '@heloc/config';
-import { createLogger } from '@heloc/logger';
-import { createErrorReporter, startServer } from '@heloc/server-kit';
 import { buildApp, SERVICE } from './app.ts';
+import { emailEnv } from './config.ts';
+import { loadConfigOrExit, serviceVersion } from './platform/config.ts';
+import { createErrorReporter } from './platform/error-reporting.ts';
+import { createLogger } from './platform/logger.ts';
+import { startServer } from './platform/server.ts';
 
 const config = loadConfigOrExit(emailEnv);
 const { logger, flush } = createLogger({

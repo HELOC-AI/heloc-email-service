@@ -1,11 +1,12 @@
 import { Writable } from 'node:stream';
-import { emailEnv, loadConfig } from '@heloc/config';
-import { sendEmailResponseSchema } from '@heloc/contracts';
-import { createLogger } from '@heloc/logger';
 import { afterEach, describe, expect, it } from 'vitest';
-import { buildApp } from './app.ts';
-import { ProviderError, type EmailProvider } from './application/send-email.ts';
-import type { OutboundEmail } from './domain/outbound-email.ts';
+import { buildApp } from '../src/app.ts';
+import { ProviderError, type EmailProvider } from '../src/application/send-email.ts';
+import { emailEnv } from '../src/config.ts';
+import type { OutboundEmail } from '../src/domain/outbound-email.ts';
+import { sendEmailResponseSchema } from '../src/interface/http/contract.ts';
+import { loadConfig } from '../src/platform/config.ts';
+import { createLogger } from '../src/platform/logger.ts';
 
 const silent = new Writable({ write: (_c, _e, cb) => cb() });
 const KEY = 'k'.repeat(64);
