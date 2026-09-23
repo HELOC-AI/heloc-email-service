@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "contract:export": "node scripts/export-contract.ts"
   },
   "dependencies": {
     "@logtail/node": "^0.5.9",

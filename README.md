@@ -15,7 +15,11 @@ chase service ──POST /v1/send──► heloc-email-service ──EmailProvid
 ## API
 
 All `/v1` routes need `Authorization: Bearer <INTERNAL_API_KEY>`. The contract (Zod schemas) is
-in [`src/interface/http/contract.ts`](src/interface/http/contract.ts).
+in [`src/interface/http/contract.ts`](src/interface/http/contract.ts); its published, language-neutral
+form is [`contract/send-api.json`](contract/send-api.json) (JSON Schema, generated with
+`pnpm contract:export`, kept current by a test). Callers pin a copy of that file and check it
+against `main` — heloc-demo does so in CI and on a schedule — so change the contract only in a
+backwards-compatible way and tell the callers.
 
 ### `POST /v1/send`
 
